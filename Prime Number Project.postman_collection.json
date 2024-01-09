@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "fe302c16-03b1-40e6-ba7f-a2ce65b3eedb",
+		"name": "Prime Number Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10613461"
+	},
+	"item": [
+		{
+			"name": "json as response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/primes/300",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"primes",
+						"300"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "json as response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/primes/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"primes",
+								"300"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Jan 2024 04:31:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"primes\": [\n        2,\n        3,\n        5,\n        7,\n        11,\n        13,\n        17,\n        19,\n        23,\n        29,\n        31,\n        37,\n        41,\n        43,\n        47,\n        53,\n        59,\n        61,\n        67,\n        71,\n        73,\n        79,\n        83,\n        89,\n        97,\n        101,\n        103,\n        107,\n        109,\n        113,\n        127,\n        131,\n        137,\n        139,\n        149,\n        151,\n        157,\n        163,\n        167,\n        173,\n        179,\n        181,\n        191,\n        193,\n        197,\n        199,\n        211,\n        223,\n        227,\n        229,\n        233,\n        239,\n        241,\n        251,\n        257,\n        263,\n        269,\n        271,\n        277,\n        281,\n        283,\n        293\n    ],\n    \"initial\": 300\n}"
+				}
+			]
+		},
+		{
+			"name": "xml as response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/primes/200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"primes",
+						"200"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "xml as response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/primes/200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"primes",
+								"200"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/xml"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Jan 2024 10:29:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<Primes>\n    <primes>\n        <primes>2</primes>\n        <primes>3</primes>\n        <primes>5</primes>\n        <primes>7</primes>\n        <primes>11</primes>\n        <primes>13</primes>\n        <primes>17</primes>\n        <primes>19</primes>\n        <primes>23</primes>\n        <primes>29</primes>\n        <primes>31</primes>\n        <primes>37</primes>\n        <primes>41</primes>\n        <primes>43</primes>\n        <primes>47</primes>\n        <primes>53</primes>\n        <primes>59</primes>\n        <primes>61</primes>\n        <primes>67</primes>\n        <primes>71</primes>\n        <primes>73</primes>\n        <primes>79</primes>\n        <primes>83</primes>\n        <primes>89</primes>\n        <primes>97</primes>\n        <primes>101</primes>\n        <primes>103</primes>\n        <primes>107</primes>\n        <primes>109</primes>\n        <primes>113</primes>\n        <primes>127</primes>\n        <primes>131</primes>\n        <primes>137</primes>\n        <primes>139</primes>\n        <primes>149</primes>\n        <primes>151</primes>\n        <primes>157</primes>\n        <primes>163</primes>\n        <primes>167</primes>\n        <primes>173</primes>\n        <primes>179</primes>\n        <primes>181</primes>\n        <primes>191</primes>\n        <primes>193</primes>\n        <primes>197</primes>\n        <primes>199</primes>\n    </primes>\n    <initial>200</initial>\n</Primes>"
+				}
+			]
+		},
+		{
+			"name": "json as response - non-numeric value",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/primes/abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"primes",
+						"abc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
