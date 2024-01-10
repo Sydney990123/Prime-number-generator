@@ -31,7 +31,7 @@ This web application is a Prime Number Generator built with Java and the Spring 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Sydney990123/Prime-number-generator.git
-   cd Prime-number-generator
+   cd Primes
 2. Build the application:
    ```bash
    mvn clean install
@@ -42,7 +42,7 @@ Your Prime Number Generator web application should now be running at http://loca
 
 ### Url
 
-Alternatively, accesing via AWS url. Open your web browser and navigate to [http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com](http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com).
+Alternatively, access via AWS URL. Open your web browser and navigate to [http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com](http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com).
 
 ## Usage
 You can use the provided API endpoints for programmatic access.
@@ -82,5 +82,5 @@ The response can be in either JSON or XML format, based on the Accept header in 
 ```
 
 ## Technologies Used
-- Java
-- Spring Boot
+- Java 8
+- Spring Boot 2.6.0
