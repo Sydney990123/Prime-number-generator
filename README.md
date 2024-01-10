@@ -31,6 +31,7 @@ This web application is a Prime Number Generator built with Java and the Spring 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Sydney990123/Prime-number-generator.git
+   cd Prime-number-generator
    cd Primes
 2. Build the application:
    ```bash
