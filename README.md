@@ -85,3 +85,4 @@ The response can be in either JSON or XML format, based on the Accept header in 
 ## Technologies Used
 - Java 8
 - Spring Boot 2.6.0
+- AWS Elastic Beanstalk
