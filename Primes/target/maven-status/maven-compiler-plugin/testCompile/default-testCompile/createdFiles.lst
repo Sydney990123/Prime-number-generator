@@ -1,0 +1,4 @@
+com/openbanking/primes/service/PrimeServiceTest.class
+com/openbanking/primes/PrimesApplicationTests.class
+com/openbanking/primes/web/PrimeControllerIT.class
+com/openbanking/primes/service/PrimeSegmentedServiceTest.class
