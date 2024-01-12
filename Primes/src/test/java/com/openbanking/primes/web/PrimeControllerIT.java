@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -19,6 +17,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PrimeControllerIT {
@@ -46,7 +45,7 @@ public class PrimeControllerIT {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
-        ResponseEntity<Primes> responseEntity = restTemplate.getForEntity(url, Primes.class);
+        ResponseEntity<Primes> responseEntity = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), Primes.class);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals("application/json", responseEntity.getHeaders().getContentType().toString());
@@ -64,7 +63,7 @@ public class PrimeControllerIT {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_XML));
 
-        ResponseEntity<Primes> responseEntity = restTemplate.getForEntity(url, Primes.class);
+        ResponseEntity<Primes> responseEntity = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), Primes.class);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals("application/xml", responseEntity.getHeaders().getContentType().toString());
@@ -79,8 +78,6 @@ public class PrimeControllerIT {
     public void testGetPrimes_given1_returnEmpty() {
         long number = 1L;
         String url = url(number);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         ResponseEntity<Primes> responseEntity = restTemplate.getForEntity(url, Primes.class);
 
@@ -97,8 +94,6 @@ public class PrimeControllerIT {
     public void testGetPrimes_givenLargeNumber() {
         long number = Integer.MAX_VALUE/10;
         String url = url(number);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         ResponseEntity<Primes> responseEntity = restTemplate.getForEntity(url, Primes.class);
 
@@ -115,8 +110,6 @@ public class PrimeControllerIT {
     public void testGetPrimes_givenNegativeNumber_returnBadRequest() {
         long number = -1L;
         String url = url(number);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
 
@@ -126,15 +119,11 @@ public class PrimeControllerIT {
     public void testGetPrimes_givenNonNumericValue_returnBadRequest() {
         String nonNumeric = "abc";
         String url = "http://localhost:" + port + "/primes/" + nonNumeric;
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         ResponseEntity<Primes> responseEntity = restTemplate.getForEntity(url, Primes.class);
 
         assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
     }
-
-
 
     private String url (long number) {
         return "http://localhost:" + port + "/primes/" + number;

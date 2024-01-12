@@ -1,7 +1,6 @@
 package com.openbanking.primes.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -9,40 +8,33 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Service
+@Slf4j
 public class PrimeSegmentedService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PrimeSegmentedService.class);
     @Cacheable(value = "primes", key = "#low + '-' + #high", cacheManager = "myCacheManager")
     public ArrayList<Long> processSegment(long low, long high) {
 
-        if (low > high) throw new IllegalArgumentException("Low could not be greater than high.");
+        validateInput(low, high);
 
-        if (high < 0 || low < 0) throw new IllegalArgumentException("Invalid negative value.");
-
-        LOG.info("start to get prime number in range {} to {} ", low, high);
+        log.info("start to get prime number in range {} to {} ", low, high);
         int limit = (int) Math.sqrt(high) + 1;
         ArrayList<Long> basePrimes = getBasePrimes(limit);
 
-        ArrayList<Long> primes = new ArrayList<>();
         boolean[] isPrime = new boolean[(int) (high-low+1)];
         Arrays.fill(isPrime, true);
 
-        for (long prime : basePrimes) {
-            long start = Math.max(prime * prime, (low + prime - 1) / prime * prime);
-            for (long j = start; j <= high; j += prime) {
-                isPrime[(int) (j - low)] = false;
-            }
-        }
+        markMultiplesAsNonPrime(low, high, basePrimes, isPrime);
 
-        for (long i = Math.max(2, low); i <= high; i++) {
-            if (isPrime[(int) (i - low)]) {
-                primes.add(i);
-            }
-        }
-
-        return primes;
+        return collectPrimes(low, high, isPrime);
     }
-    private static ArrayList<Long> getBasePrimes(int limit) {
+
+    private void validateInput(long low, long high) {
+        if (low > high) throw new IllegalArgumentException("Low could not be greater than high.");
+
+        if (high < 0 || low < 0) throw new IllegalArgumentException("Invalid negative value.");
+    }
+
+    private ArrayList<Long> getBasePrimes(int limit) {
 
         boolean[] isPrime = new boolean[limit + 1];
         for (int i = 2; i <= limit; i++) {
@@ -59,6 +51,26 @@ public class PrimeSegmentedService {
         for (int i = 2; i <= limit; i++) {
             if (isPrime[i])
                 primes.add((long) i);
+        }
+
+        return primes;
+    }
+
+    private void markMultiplesAsNonPrime(long low, long high, ArrayList<Long> basePrimes, boolean[] isPrime) {
+        for (long prime : basePrimes) {
+            long start = Math.max(prime * prime, (low + prime - 1) / prime * prime);
+            for (long j = start; j <= high; j += prime) {
+                isPrime[(int) (j - low)] = false;
+            }
+        }
+    }
+
+    private static ArrayList<Long> collectPrimes(long low, long high, boolean[] isPrime) {
+        ArrayList<Long> primes = new ArrayList<>();
+        for (long i = Math.max(2, low); i <= high; i++) {
+            if (isPrime[(int) (i - low)]) {
+                primes.add(i);
+            }
         }
 
         return primes;
