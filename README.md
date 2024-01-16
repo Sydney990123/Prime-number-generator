@@ -7,8 +7,8 @@ This web application is a Prime Number Generator built with Java and the Spring 
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Url](#url)
+  - [Local Installation](#local-installation)
+  - [AWS Platform](#aws-platform)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
 - [Response Format](#response-format)
@@ -26,7 +26,7 @@ This web application is a Prime Number Generator built with Java and the Spring 
 - Java Development Kit (JDK)
 - Maven
 
-### Installation
+### Local Installation
 
 1. Clone the repository:
    ```bash
@@ -41,7 +41,7 @@ This web application is a Prime Number Generator built with Java and the Spring 
    java -jar target/primes-0.0.1-SNAPSHOT.jar
 Your Prime Number Generator web application should now be running at http://localhost:8080.
 
-### Url
+### AWS Platform
 
 Alternatively, access via AWS URL. Open your web browser and navigate to [http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com](http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com).
 
