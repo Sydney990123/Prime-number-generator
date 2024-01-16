@@ -1,6 +1,9 @@
 # Prime Number Generator Web Application
 
-This web application is a Prime Number Generator built with Java and the Spring Boot framework. It provides RESTful API to generate prime numbers up to and including a specified number. It is also deployed on AWS Elastic Beanstalk.
+This web application is a Prime Number Generator built with Java and the Spring Boot framework. It provides RESTful API to generate prime numbers up to and including a specified number. It can be accessed locally or via AWS Platform as it is deployed on AWS Elastic Beanstalk.
+
+The algorithm used to generate the prime numbers is the Segmented Sieve algorithm, which is an optimized version of the Sieve of Eratosthenes that allows for generating prime numbers in a specific range efficiently.
+
 
 ## Table of Contents
 
@@ -16,8 +19,9 @@ This web application is a Prime Number Generator built with Java and the Spring 
 
 ## Features
 
-- Generate prime numbers up to and including a specified number.
-- RESTful API for programmatic access.
+- Generate prime numbers up to and including a specified number
+- RESTful API for programmatic access
+- Use the Segmented Sieve Algorithm
 
 ## Getting Started
 
