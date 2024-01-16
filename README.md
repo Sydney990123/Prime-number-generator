@@ -50,6 +50,14 @@ You can use the provided API endpoints for programmatic access.
 
 ## Endpoints
 
+- **GET /**
+  - Home page for a short description of the web app.
+
+Example:
+```bash
+curl http://Prime-number-generator-env.eba-phepqwti.eu-west-2.elasticbeanstalk.com/
+```
+
 - **GET /primes/{number}**
   - Generate prime numbers up to and including the specified number.
 
