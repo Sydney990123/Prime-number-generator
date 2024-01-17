@@ -48,9 +48,10 @@ public class PrimeSegmentedService {
                     isPrime[i] = false;
                 }
             }
-        for (int i = 2; i <= limit; i++) {
-            if (isPrime[i])
-                primes.add((long) i);
+
+        for (int p = 2; p <= limit; p++) {
+            if (isPrime[p])
+                primes.add((long) p);
         }
 
         return primes;
@@ -59,8 +60,8 @@ public class PrimeSegmentedService {
     private void markMultiplesAsNonPrime(long low, long high, ArrayList<Long> basePrimes, boolean[] isPrime) {
         for (long prime : basePrimes) {
             long start = Math.max(prime * prime, (low + prime - 1) / prime * prime);
-            for (long j = start; j <= high; j += prime) {
-                isPrime[(int) (j - low)] = false;
+            for (long i = start; i <= high; i += prime) {
+                isPrime[(int) (i - low)] = false;
             }
         }
     }

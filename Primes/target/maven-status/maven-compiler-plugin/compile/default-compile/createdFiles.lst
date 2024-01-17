@@ -1,6 +1,8 @@
+com/openbanking/primes/web/GlobalExceptionHandler.class
 com/openbanking/primes/service/PrimeService.class
 com/openbanking/primes/PrimesApplication.class
 com/openbanking/primes/config/CacheConfig.class
+com/openbanking/primes/model/ErrorResponse.class
 com/openbanking/primes/model/Primes.class
 com/openbanking/primes/service/PrimeSegmentedService.class
 com/openbanking/primes/web/PrimeController.class

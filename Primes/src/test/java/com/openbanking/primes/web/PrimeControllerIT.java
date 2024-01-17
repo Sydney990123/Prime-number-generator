@@ -120,7 +120,7 @@ public class PrimeControllerIT {
         String nonNumeric = "abc";
         String url = "http://localhost:" + port + "/primes/" + nonNumeric;
 
-        ResponseEntity<Primes> responseEntity = restTemplate.getForEntity(url, Primes.class);
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
 
         assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
     }

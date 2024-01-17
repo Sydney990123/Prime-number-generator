@@ -18,6 +18,7 @@ public class PrimeService {
 
     @Cacheable(value = "primes", key = "#number", cacheManager = "myCacheManager")
     public ArrayList<Long> getPrimes(long number) {
+        validateInput(number);
 
         if (number < 2) {
             return new ArrayList<>();
@@ -31,6 +32,12 @@ public class PrimeService {
         }
 
         return primes;
+    }
+
+    private void validateInput(long number) {
+        if (number <= 0) {
+            throw new IllegalArgumentException("Please provide a positive number.");
+        }
     }
 
 }
