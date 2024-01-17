@@ -22,6 +22,7 @@ The algorithm used to generate the prime numbers is the Segmented Sieve algorith
 - Generate prime numbers up to and including a specified number
 - RESTful API for programmatic access
 - Use the Segmented Sieve Algorithm
+- Utilize caching for better performance
 
 ## Getting Started
 
