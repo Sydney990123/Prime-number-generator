@@ -1,8 +1,8 @@
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/config/CacheConfig.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/service/PrimeService.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/model/ErrorResponse.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/web/GlobalExceptionHandler.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/PrimesApplication.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/web/PrimeController.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/model/Primes.java
-/Users/mac/Desktop/NatWest/Primes/Primes/src/main/java/com/openbanking/primes/service/PrimeSegmentedService.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/web/GlobalExceptionHandler.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/PrimesApplication.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/service/PrimeSegmentedService.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/model/ErrorResponse.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/service/PrimeService.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/web/PrimeController.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/model/Primes.java
+/Users/mac/Desktop/Test/Prime-number-generator/Primes/src/main/java/com/openbanking/primes/config/CacheConfig.java

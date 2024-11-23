@@ -1,6 +1,5 @@
 package com.openbanking.primes.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -10,12 +9,15 @@ import java.util.ArrayList;
 @Service
 public class PrimeService {
 
-    @Autowired
-    private PrimeSegmentedService primeSegmentedService;
+    private final PrimeSegmentedService primeSegmentedService;
 
     @Value("${prime.segment.size: 100}")
     private int SEGMENT_SIZE;
 
+
+    public PrimeService(PrimeSegmentedService primeSegmentedService) {
+        this.primeSegmentedService = primeSegmentedService;
+    }
     @Cacheable(value = "primes", key = "#number", cacheManager = "myCacheManager")
     public ArrayList<Long> getPrimes(long number) {
         validateInput(number);
